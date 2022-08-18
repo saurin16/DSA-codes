@@ -1,0 +1,33 @@
+A friend of Alex has gifted them a movie collection, and Alex is excited to watch them all as quickly as possible. The duration of the movies is given in array durations[n], where n is the number of movies, and each movie duration lies between 1.01 and 3.00 units of time (up to two decimal places). Every day, Alex wants to spend no more than 3.00 units of time watching the movies but also wants to complete the movies in the least number of days possible. Alex does not leave a movie in between. That is, if Alex has picked up a movie, Alex watches the complete movie on the same day. Find the minimum number of days needed to watch all the movies. 
+
+For example, n = 5 durations = [1.90, 1.04, 1.25, 2.5, 1.75]
+
+import java.util.Scanner;
+
+public class question1 {
+    public static void main(String[] args) {
+     Scanner sc = new Scanner(System.in);
+      float arr[]=new float[5];
+       arr= new float[]{1.5f, 3f, 1.5f, 1.5f, 2.25f};
+      int n = arr.length;
+      int i =0;
+      int c=0;
+      float max=3.0f;
+      int j = arr.length-1;
+        Arrays.sort(arr);
+   while (j>i){
+       if(arr[i]+arr[j]<max){
+           c++;
+           i++;
+           j--;
+
+       }
+       else {
+           c++;
+           j--;
+
+       }
+   }
+        System.out.println(c);
+    }
+}
